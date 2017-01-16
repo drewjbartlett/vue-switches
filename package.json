@@ -1,0 +1,28 @@
+{
+  "name": "vue-switcher",
+  "version": "1.0.0",
+  "description": "A simple on/off switch component for Vue.js.",
+  "main": "switcher.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      "vueify"
+    ]
+  },
+  "keywords": [
+    "switcher",
+    "component",
+    "vue"
+  ],
+  "author": "Drew J Bartlett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drewjbartlett/vue-switcher/issues"
+  },
+  "homepage": "https://github.com/drewjbartlett/vue-switcher#readme",
+  "devDependencies": {
+
+  }
+}
