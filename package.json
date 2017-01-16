@@ -1,8 +1,8 @@
 {
-  "name": "vue-switcher",
+  "name": "vue-switches",
   "version": "1.0.0",
   "description": "A simple on/off switch component for Vue.js.",
-  "main": "switcher.vue",
+  "main": "switches.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,7 @@
     ]
   },
   "keywords": [
-    "switcher",
+    "switches",
     "component",
     "vue"
   ],
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/drewjbartlett/vue-switcher#readme",
   "devDependencies": {
-
+    "node-sass": "^4.3.0",
+    "vue": "^2.1.8"
   }
 }
