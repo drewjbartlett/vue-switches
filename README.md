@@ -75,6 +75,8 @@ In addition support for bootstrap can be used as follows:
 
 Available colors for Bulma are `default`, `primary`, `success`, `info`, `warning`, and `danger`.
 
+A demo of all themes can be seen [here](http://drewjbartlett.com/demos/vue-switches/).
+
 ## Making Your Own Themes
 Vue Switcher has a base class of  `.vue-switcher`. For an unchecked switch a class of `.vue-switcher--unchecked` is applied. Lastly, for the `theme` and `color` props a class is also applied. So for a `bulma` theme of color `primary` the classes `.vue-switcher-theme--bulma` and `.vue-switcher-color--primary`.
 
