@@ -1,6 +1,8 @@
 # Vue Switches
 A Vue.js component for simple switches with theme support for [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) and custom themes.
 
+<img src="http://cagefreeproduce.com/images/vue-switches.png" />
+
 ## Installation
 
 ```bash
