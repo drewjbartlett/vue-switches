@@ -64,11 +64,12 @@ export default {
     computed: {
         classObject () {
 
-            const { color, enabled, theme } = this;
+            const { color, enabled, theme, disabled } = this;
 
             return {
                 'vue-switcher' : true,
                 ['vue-switcher--unchecked'] : !enabled,
+                ['vue-switcher--disabled'] : disabled,
                 [`vue-switcher-theme--${theme}`] : color,
                 [`vue-switcher-color--${color}`] : color,
             };
@@ -191,6 +192,16 @@ export default {
                 &:after {
                     left: 15px;
                 }
+            }
+        }
+
+        &--disabled {
+            div {
+                opacity: .3;
+            }
+
+            input {
+                cursor: not-allowed;
             }
         }
 
