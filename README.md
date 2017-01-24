@@ -29,7 +29,9 @@ new Vue({
 ```
 
 ```html
-    <switches v-model="enabled" :selected="enabled"></switches>
+
+<switches v-model="enabled" :selected="enabled"></switches>
+
 ```
 
 ## Props
@@ -45,14 +47,20 @@ new Vue({
 Out of the box `vue-switches` supports a default, [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) themes. To use them you can do as follows:
 
 Providing no `theme` or `color` props would render a switch of default theme and color.
+
 ```html
-     <switches v-model="enabled" :selected="enabled"></switches>
+
+ <switches v-model="enabled" :selected="enabled"></switches>
+
 ```
 
 Available colors for `default` are `default`, `red`, `blue`, `green`, and `yellow`, and `orange.
 
+
 ```html
+
     <switches v-model="enabled" :selected="enabled" theme="bulma" color="default"></switches>
+
 ```
 
 Available colors for Bulma are `default`, `primary`, `red`, `blue`, `green`, and `yellow`.
@@ -60,7 +68,9 @@ Available colors for Bulma are `default`, `primary`, `red`, `blue`, `green`, and
 In addition support for bootstrap can be used as follows:
 
 ```html
-    <switches v-model="enabled" :selected="enabled" theme="bootstrap" color="danger"></switches>
+
+<switches v-model="enabled" :selected="enabled" theme="bootstrap" color="danger"></switches>
+
 ```
 
 Available colors for Bulma are `default`, `primary`, `success`, `info`, `warning`, and `danger`.
@@ -70,34 +80,36 @@ Vue Switcher has a base class of  `.vue-switcher`. For an unchecked switch a cla
 
 This:
 ```html
-    <switches v-model="enabled" :selected="enabled" theme="custom" color="blue"></switches>
+
+<switches v-model="enabled" :selected="enabled" theme="custom" color="blue"></switches>
+
 ```
 
 Would render the classes `.vue-switcher-theme--custom` and `.vue-switcher-color--blue`. Sass for this theme could look like:
 
 ```css
-    .vue-switcher-theme--custom {
-        &.vue-switcher-color--blue {
+.vue-switcher-theme--custom {
+    &.vue-switcher-color--blue {
+        div {
+            background-color: lighten(blue, 10%);
+
+            &:after {
+                // for the circle on the switch
+                background-color: darken(blue, 5%);
+            }
+        }
+
+        &.vue-switcher--unchecked {
             div {
-                background-color: lighten(blue, 10%);
+                background-color: lighten(blue, 30%);
 
                 &:after {
-                    // for the circle on the switch
-                    background-color: darken(blue, 5%);
-                }
-            }
-
-            &.vue-switcher--unchecked {
-                div {
-                    background-color: lighten(blue, 30%);
-
-                    &:after {
-                        background-color: lighten(blue, 10%);
-                    }
+                    background-color: lighten(blue, 10%);
                 }
             }
         }
     }
+}
 ```
 
 For better understanding, below is how the class object is rendered.
