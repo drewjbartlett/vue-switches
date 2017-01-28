@@ -123,6 +123,7 @@ classObject () {
     return {
         'vue-switcher' : true,
         ['vue-switcher--unchecked'] : !enabled,
+        ['vue-switcher--disabled'] : disabled,
         [`vue-switcher-theme--${theme}`] : color,
         [`vue-switcher-color--${color}`] : color,
     };
