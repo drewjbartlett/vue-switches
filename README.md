@@ -84,7 +84,7 @@ Vue Switcher has a base class of  `.vue-switcher`. For an unchecked switch a cla
 This:
 ```html
 
-<switches v-model="enabled" :selected="enabled" theme="custom" color="blue"></switches>
+<switches v-model="enabled" :selected="enabled" type-bold="false" theme="custom" color="blue"></switches>
 
 ```
 
