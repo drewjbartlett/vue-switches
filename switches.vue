@@ -223,7 +223,7 @@ export default {
                 }
             }
 
-            & --unchecked {
+            &--unchecked {
                 div {
                     &:after {
                         left: 26px;

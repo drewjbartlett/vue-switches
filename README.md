@@ -36,11 +36,12 @@ new Vue({
 
 ## Props
 
-`label` - A static label to always display whether on or off.
-`text-enabled` - The text that displays when enabled.
-`text-disabled` - The text that displays when disabled.
-`theme` - Which theme to use.
-`color` - Which color to use.
+`label` - A static label to always display whether on or off. <br /> 
+`text-enabled` - The text that displays when enabled. <br />
+`text-disabled` - The text that displays when disabled. <br />
+`theme` - Which theme to use. <br />
+`color` - Which color to use. <br />
+`type-bold` - Bigger style. <br />
 
 
 ## Theme Support
