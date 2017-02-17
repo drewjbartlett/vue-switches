@@ -18,6 +18,10 @@ export default {
     name: 'switches',
 
     props: {
+        typeBold: {
+            default  : false
+        },
+
         selected     : false,
 
         disabled     : false,
@@ -38,7 +42,9 @@ export default {
 
         theme        : {
             default  : 'default'
-        }
+        },
+
+        bold         : false
     },
 
     data () {
@@ -64,12 +70,14 @@ export default {
     computed: {
         classObject () {
 
-            const { color, enabled, theme, disabled } = this;
+            const { color, enabled, theme, typeBold, disabled } = this;
 
             return {
                 'vue-switcher' : true,
                 ['vue-switcher--unchecked'] : !enabled,
                 ['vue-switcher--disabled'] : disabled,
+                ['vue-switcher--bold']: typeBold,
+                ['vue-switcher--bold--unchecked']: typeBold && !enabled,
                 [`vue-switcher-theme--${theme}`] : color,
                 [`vue-switcher-color--${color}`] : color,
             };
@@ -202,6 +210,34 @@ export default {
 
             input {
                 cursor: not-allowed;
+            }
+        }
+
+        &--bold {
+            div {
+                top: -8px;
+                height: 26px;
+                width: 51px;
+
+                &:after {
+                    margin-left: -22px;
+                    top: 4px;
+                }
+            }
+
+            &--unchecked {
+                div {
+                    &:after {
+                        left: 26px;
+                    }
+                }
+            }
+
+            .vue-switcher__label {
+                span {
+                    padding-bottom: 7px;
+                    display: inline-block;
+                }
             }
         }
 
