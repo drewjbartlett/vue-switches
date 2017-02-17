@@ -1,7 +1,7 @@
 # Vue Switches
 A Vue.js component for simple switches with theme support for [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) and custom themes. See a live demo [here](http://drewjbartlett.com/demos/vue-switches/).
 
-<img src="http://drewjbartlett.com/assets/demos/images/vue-switches.png" />
+<img src="http://drewjbartlett.com/assets/demos/images/vue-switches.png" /><br>
 <img src="http://drewjbartlett.com/assets/demos/images/vue-switches-bold.png" />
 
 ## Installation
