@@ -1,12 +1,13 @@
 # Vue Switches
 A Vue.js component for simple switches with theme support for [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) and custom themes. See a live demo [here](http://drewjbartlett.com/demos/vue-switches/).
 
-<img src="http://cagefreeproduce.com/images/vue-switches.png" />
+<img src="http://drewjbartlett.com/demos/images/vue-switches.png" />
+<img src="http://drewjbartlett.com/demos/images/vue-switches-bold.png" />
 
 ## Installation
 
 ```bash
-    npm install vue-switches --save
+npm install vue-switches --save
 ```
 
 ## Basic Usage
@@ -36,11 +37,12 @@ new Vue({
 
 ## Props
 
-`label` - A static label to always display whether on or off.
-`text-enabled` - The text that displays when enabled.
-`text-disabled` - The text that displays when disabled.
-`theme` - Which theme to use.
-`color` - Which color to use.
+`label` - A static label to always display whether on or off. <br />
+`text-enabled` - The text that displays when enabled. <br />
+`text-disabled` - The text that displays when disabled. <br />
+`theme` - Which theme to use. <br />
+`color` - Which color to use. <br />
+`type-bold` - Bigger style. <br />
 
 
 ## Theme Support
@@ -59,7 +61,7 @@ Available colors for `default` are `default`, `red`, `blue`, `green`, and `yello
 
 ```html
 
-    <switches v-model="enabled" :selected="enabled" theme="bulma" color="default"></switches>
+<switches v-model="enabled" :selected="enabled" theme="bulma" color="default"></switches>
 
 ```
 
@@ -75,7 +77,17 @@ In addition support for bootstrap can be used as follows:
 
 Available colors for Bulma are `default`, `primary`, `success`, `info`, `warning`, and `danger`.
 
-A demo of all themes can be seen [here](http://drewjbartlett.com/demos/vue-switches/).
+## Styles
+
+Out of the box `vue-switches` has two styles: `default` and `bold`. By default the switch is not bold. To enable the bold style you can set `type-bold` to true like this:
+
+```html
+
+<switches v-model="enabled" :selected="enabled" type-bold="true"></switches>
+
+```
+
+A demo of all themes and styles can be seen [here](http://drewjbartlett.com/demos/vue-switches/).
 
 ## Making Your Own Themes
 Vue Switcher has a base class of  `.vue-switcher`. For an unchecked switch a class of `.vue-switcher--unchecked` is applied. Lastly, for the `theme` and `color` props a class is also applied. So for a `bulma` theme of color `primary` the classes `.vue-switcher-theme--bulma` and `.vue-switcher-color--primary`.
@@ -118,12 +130,14 @@ For better understanding, below is how the class object is rendered.
 ```javascript
 classObject () {
 
-    const { color, enabled, theme } = this;
+    const { color, enabled, theme, typeBold, disabled } = this;
 
     return {
         'vue-switcher' : true,
         ['vue-switcher--unchecked'] : !enabled,
         ['vue-switcher--disabled'] : disabled,
+        ['vue-switcher--bold']: typeBold,
+        ['vue-switcher--bold--unchecked']: typeBold && !enabled,
         [`vue-switcher-theme--${theme}`] : color,
         [`vue-switcher-color--${color}`] : color,
     };
