@@ -18,7 +18,9 @@ export default {
     name: 'switches',
 
     props: {
-        typeBold     : false,
+        typeBold: {
+            default  : true
+        },
 
         selected     : false,
 
