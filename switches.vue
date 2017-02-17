@@ -19,7 +19,7 @@ export default {
 
     props: {
         typeBold: {
-            default  : true
+            default  : false
         },
 
         selected     : false,
@@ -230,6 +230,13 @@ export default {
                     &:after {
                         left: 26px;
                     }
+                }
+            }
+
+            .vue-switcher__label {
+                span {
+                    padding-bottom: 7px;
+                    display: inline-block;
                 }
             }
         }
