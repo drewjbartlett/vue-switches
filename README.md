@@ -37,7 +37,7 @@ new Vue({
 
 ## Props
 
-`label` - A static label to always display whether on or off. <br />
+`label` - A static label to always display whether on or off. <br /> 
 `text-enabled` - The text that displays when enabled. <br />
 `text-disabled` - The text that displays when disabled. <br />
 `theme` - Which theme to use. <br />
@@ -95,7 +95,7 @@ Vue Switcher has a base class of  `.vue-switcher`. For an unchecked switch a cla
 This:
 ```html
 
-<switches v-model="enabled" :selected="enabled" theme="custom" color="blue"></switches>
+<switches v-model="enabled" :selected="enabled" type-bold="false" theme="custom" color="blue"></switches>
 
 ```
 
