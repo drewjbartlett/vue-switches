@@ -37,12 +37,13 @@ new Vue({
 
 ## Props
 
-`label` - A static label to always display whether on or off. <br /> 
+`label` - A static label to always display whether on or off. <br />
 `text-enabled` - The text that displays when enabled. <br />
 `text-disabled` - The text that displays when disabled. <br />
 `theme` - Which theme to use. <br />
 `color` - Which color to use. <br />
 `type-bold` - Bigger style. <br />
+`emit-on-mount` - By default, a "changed" event is emitted when the component mounts. To disable this, set this to false. <br />
 
 
 ## Theme Support

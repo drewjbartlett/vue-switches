@@ -19,32 +19,40 @@ export default {
 
     props: {
         typeBold: {
-            default  : false
+            default: false
         },
 
-        selected     : false,
-
-        disabled     : false,
-
-        label        : '',
-
-        textEnabled  : {
-            default  : ''
+        selected: {
+            default: false
         },
 
-        textDisabled : {
-            default  : ''
+        disabled: {
+            default: false
         },
 
-        color        : {
-            default  : 'default'
+        label: {
+            default: ''
         },
 
-        theme        : {
-            default  : 'default'
+        textEnabled: {
+            default: ''
         },
 
-        bold         : false
+        textDisabled: {
+            default: ''
+        },
+
+        color: {
+            default: 'default'
+        },
+
+        theme: {
+            default: 'default'
+        },
+
+        emitOnMount: {
+            default: true
+        }
     },
 
     data () {
@@ -54,7 +62,9 @@ export default {
     },
 
     mounted () {
-        this.$emit('input', this.enabled = !!this.selected)
+        if(this.emitOnMount) {
+            this.$emit('input', this.enabled = !!this.selected)
+        }
     },
 
     watch: {
