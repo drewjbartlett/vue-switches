@@ -22,8 +22,8 @@
     "url": "https://github.com/drewjbartlett/vue-switches/issues"
   },
   "homepage": "https://github.com/drewjbartlett/vue-switches#readme",
-  "devDependencies": {
-    "node-sass": "^4.3.0",
-    "vue": "^2.1.8"
+  "dependencies": {
+    "node-sass": "^4.5.2",
+    "vue": "^2.2.6"
   }
 }
