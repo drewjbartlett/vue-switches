@@ -57,7 +57,7 @@ Providing no `theme` or `color` props would render a switch of default theme and
 
 ```
 
-Available colors for `default` are `default`, `red`, `blue`, `green`, and `yellow`, and `orange.
+Available colors for `default` are `default`, `red`, `blue`, `green`, and `yellow`, and `orange`.
 
 
 ```html
@@ -76,7 +76,7 @@ In addition support for bootstrap can be used as follows:
 
 ```
 
-Available colors for Bulma are `default`, `primary`, `success`, `info`, `warning`, and `danger`.
+Available colors for bootstrap are `default`, `primary`, `success`, `info`, `warning`, and `danger`.
 
 ## Styles
 
