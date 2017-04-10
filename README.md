@@ -161,17 +161,17 @@ For better understanding, below is how the class object is rendered.
 ```javascript
 classObject () {
 
-    const { color, enabled, theme, typeBold, disabled } = this;
+            const {color, enabled, theme, typeBold, disabled} = this;
 
-    return {
-        'vue-switcher' : true,
-        ['vue-switcher--unchecked'] : !enabled,
-        ['vue-switcher--disabled'] : disabled,
-        ['vue-switcher--bold']: typeBold,
-        ['vue-switcher--bold--unchecked']: typeBold && !enabled,
-        [`vue-switcher-theme--${theme}`] : color,
-        [`vue-switcher-color--${color}`] : color,
-    };
+            return {
+                'vue-switcher': true,
+                ['vue-switcher--unchecked']: !enabled,
+                ['vue-switcher--disabled']: disabled,
+                ['vue-switcher--bold']: typeBold,
+                ['vue-switcher--bold--unchecked']: typeBold && !enabled,
+                [`vue-switcher-theme--${theme}`]: color,
+                [`vue-switcher-color--${color}`]: color,
+            };
 
-}
+        }
 ```
