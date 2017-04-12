@@ -36,15 +36,45 @@ new Vue({
 ```
 
 ## Props
+<table>
+    <thead>
+        <tr>
+            <th>Prop</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>label</td>
+            <td>A static label to always display whether on or off.</td>
+        </tr>
+        <tr>
+            <td>text-enabled</td>
+            <td>The text that displays when enabled.</td>
+        </tr>
+        <tr>
+            <td>text-disabled</td>
+            <td>The text that displays when disabled.</td>
+        </tr>
+        <tr>
+            <td>theme</td>
+            <td>Which theme to use.</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>Which color to use. </td>
+        </tr>
+        <tr>
+            <td>type-bold</td>
+            <td>Bigger style.</td>
+        </tr>
+        <tr>
+            <td>emit-on-mount</td> 
+            <td>By default, a "changed" event is emitted when the component mounts. To disable this, set this to false.</td>
+        </tr>
+    </tbody>
 
-`label` - A static label to always display whether on or off. <br />
-`text-enabled` - The text that displays when enabled. <br />
-`text-disabled` - The text that displays when disabled. <br />
-`theme` - Which theme to use. <br />
-`color` - Which color to use. <br />
-`type-bold` - Bigger style. <br />
-`emit-on-mount` - By default, a "changed" event is emitted when the component mounts. To disable this, set this to false. <br />
-
+</table>
 
 ## Theme Support
 Out of the box `vue-switches` supports a default, [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) themes. To use them you can do as follows:
@@ -102,7 +132,7 @@ This:
 
 Would render the classes `.vue-switcher-theme--custom` and `.vue-switcher-color--blue`. Sass for this theme could look like:
 
-```css
+```scss
 .vue-switcher-theme--custom {
     &.vue-switcher-color--blue {
         div {
@@ -131,17 +161,17 @@ For better understanding, below is how the class object is rendered.
 ```javascript
 classObject () {
 
-    const { color, enabled, theme, typeBold, disabled } = this;
+            const {color, enabled, theme, typeBold, disabled} = this;
 
-    return {
-        'vue-switcher' : true,
-        ['vue-switcher--unchecked'] : !enabled,
-        ['vue-switcher--disabled'] : disabled,
-        ['vue-switcher--bold']: typeBold,
-        ['vue-switcher--bold--unchecked']: typeBold && !enabled,
-        [`vue-switcher-theme--${theme}`] : color,
-        [`vue-switcher-color--${color}`] : color,
-    };
+            return {
+                'vue-switcher': true,
+                ['vue-switcher--unchecked']: !enabled,
+                ['vue-switcher--disabled']: disabled,
+                ['vue-switcher--bold']: typeBold,
+                ['vue-switcher--bold--unchecked']: typeBold && !enabled,
+                [`vue-switcher-theme--${theme}`]: color,
+                [`vue-switcher-color--${color}`]: color,
+            };
 
-}
+        }
 ```
