@@ -187,6 +187,7 @@ export default {
             align-items: center;
             justify-content: flex-start;
             cursor: pointer;
+            transition: all ease .4s;
 
             &:after {
                 content: '';
