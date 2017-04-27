@@ -1,6 +1,6 @@
 {
   "name": "vue-switches",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "An on/off switch component for Vue.js with theme support.",
   "main": "switches.vue",
   "scripts": {
