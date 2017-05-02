@@ -1,4 +1,8 @@
 # Vue Switches
+
+[![npm](https://img.shields.io/npm/v/vue-switches.svg)](https://www.npmjs.com/package/vue-switches)
+[![npm](https://img.shields.io/npm/dt/vue-switches.svg)](https://www.npmjs.com/package/vue-switches)
+
 A Vue.js component for simple switches with theme support for [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) and custom themes. See a live demo [here](http://drewjbartlett.com/demos/vue-switches/).
 
 <img src="http://drewjbartlett.com/assets/demos/vue-switches/vue-switches.png" /><br>
