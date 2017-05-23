@@ -1,6 +1,6 @@
 <template>
     <label :class="classObject">
-        <span class="vue-switcher__label">
+        <span class="vue-switcher__label" v-if="shouldShowLabel">
             <span v-if="label" v-text="label"></span>
             <span v-if="!label && enabled" v-text="textEnabled"></span>
             <span v-if="!label && !enabled" v-text="textDisabled"></span>
@@ -92,6 +92,10 @@ export default {
                 [`vue-switcher-color--${color}`] : color,
             };
 
+        },
+
+        shouldShowLabel () {
+            return this.label !== '' || this.textEnabled !== '' || this.textDisabled !== '';
         }
     }
 }
