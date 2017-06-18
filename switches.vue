@@ -6,7 +6,7 @@
             <span v-if="!label && !value" v-text="textDisabled"></span>
         </span>
 
-        <input type="checkbox" :disabled="disabled" @change="trigger">
+        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
 
         <div></div>
     </label>
