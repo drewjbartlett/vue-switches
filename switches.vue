@@ -2,11 +2,11 @@
     <label :class="classObject">
         <span class="vue-switcher__label" v-if="shouldShowLabel">
             <span v-if="label" v-text="label"></span>
-            <span v-if="!label && enabled" v-text="textEnabled"></span>
-            <span v-if="!label && !enabled" v-text="textDisabled"></span>
+            <span v-if="!label && value" v-text="textEnabled"></span>
+            <span v-if="!label && !value" v-text="textDisabled"></span>
         </span>
 
-        <input type="checkbox" :disabled="disabled" v-model="enabled">
+        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
 
         <div></div>
     </label>
@@ -22,7 +22,7 @@ export default {
             default: false
         },
 
-        selected: {
+        value: {
             default: false
         },
 
@@ -55,39 +55,29 @@ export default {
         }
     },
 
-    data () {
-        return  {
-            enabled: !!this.selected
-        }
-    },
-
     mounted () {
         if(this.emitOnMount) {
-            this.$emit('input', this.enabled = !!this.selected)
+            this.$emit('input', this.value)
         }
     },
 
-    watch: {
-        enabled (val) {
-            this.$emit('input', val);
-        },
-
-        selected (val) {
-            this.enabled = !!val;
+    methods: {
+        trigger (e) {
+            this.$emit('input', e.target.checked)
         }
     },
 
     computed: {
         classObject () {
 
-            const { color, enabled, theme, typeBold, disabled } = this;
+            const { color, value, theme, typeBold, disabled } = this;
 
             return {
                 'vue-switcher' : true,
-                ['vue-switcher--unchecked'] : !enabled,
+                ['vue-switcher--unchecked'] : !value,
                 ['vue-switcher--disabled'] : disabled,
                 ['vue-switcher--bold']: typeBold,
-                ['vue-switcher--bold--unchecked']: typeBold && !enabled,
+                ['vue-switcher--bold--unchecked']: typeBold && !value,
                 [`vue-switcher-theme--${theme}`] : color,
                 [`vue-switcher-color--${color}`] : color,
             };

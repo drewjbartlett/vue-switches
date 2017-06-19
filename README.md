@@ -35,7 +35,7 @@ new Vue({
 
 ```html
 
-<switches v-model="enabled" :selected="enabled"></switches>
+<switches v-model="enabled"></switches>
 
 ```
 
@@ -87,7 +87,7 @@ Providing no `theme` or `color` props would render a switch of default theme and
 
 ```html
 
- <switches v-model="enabled" :selected="enabled"></switches>
+ <switches v-model="enabled"></switches>
 
 ```
 
@@ -96,7 +96,7 @@ Available colors for `default` are `default`, `red`, `blue`, `green`, and `yello
 
 ```html
 
-<switches v-model="enabled" :selected="enabled" theme="bulma" color="default"></switches>
+<switches v-model="enabled" theme="bulma" color="default"></switches>
 
 ```
 
@@ -106,7 +106,7 @@ In addition support for bootstrap can be used as follows:
 
 ```html
 
-<switches v-model="enabled" :selected="enabled" theme="bootstrap" color="danger"></switches>
+<switches v-model="enabled" theme="bootstrap" color="danger"></switches>
 
 ```
 
@@ -118,7 +118,7 @@ Out of the box `vue-switches` has two styles: `default` and `bold`. By default t
 
 ```html
 
-<switches v-model="enabled" :selected="enabled" type-bold="true"></switches>
+<switches v-model="enabled" type-bold="true"></switches>
 
 ```
 
@@ -130,7 +130,7 @@ Vue Switcher has a base class of  `.vue-switcher`. For an unchecked switch a cla
 This:
 ```html
 
-<switches v-model="enabled" :selected="enabled" type-bold="false" theme="custom" color="blue"></switches>
+<switches v-model="enabled" type-bold="false" theme="custom" color="blue"></switches>
 
 ```
 
