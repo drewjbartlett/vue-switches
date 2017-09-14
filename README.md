@@ -5,8 +5,9 @@
 
 A Vue.js component for simple switches with theme support for [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) and custom themes. See a live demo [here](http://drewjbartlett.com/demos/vue-switches/).
 
-<img src="http://drewjbartlett.com/assets/demos/vue-switches/vue-switches.png" /><br>
-<img src="http://drewjbartlett.com/assets/demos/vue-switches/vue-switches-bold.png" />
+<div style="text-align: center;">
+<img src="http://drewjbartlett.com/assets/demos/vue-switches/switches.png" />
+</div>
 
 ## Installation
 
@@ -73,7 +74,7 @@ new Vue({
             <td>Bigger style.</td>
         </tr>
         <tr>
-            <td>emit-on-mount</td> 
+            <td>emit-on-mount</td>
             <td>By default, a "changed" event is emitted when the component mounts. To disable this, set this to false.</td>
         </tr>
     </tbody>
