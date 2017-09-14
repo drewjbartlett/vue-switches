@@ -1,11 +1,11 @@
 {
   "name": "vue-switches",
-  "version": "1.1.7",
+  "version": "2.0.0",
   "description": "An on/off switch component for Vue.js with theme support.",
   "main": "src/switches.vue",
   "scripts": {
-      "compile": "node-sass src/switches.scss dist/switches.css",
-      "prepublish": "npm run compile"
+    "compile": "node-sass src/switches.scss dist/switches.css",
+    "prepublish": "npm run compile"
   },
   "browserify": {
     "transform": [
