@@ -5,9 +5,9 @@
 
 A Vue.js component for simple switches with theme support for [bulma](http://bulma.io), [bootstrap](http://getbootstrap.com/) and custom themes. See a live demo [here](http://drewjbartlett.com/demos/vue-switches/).
 
-<div style="text-align: center;">
+<p align="center">
 <img src="http://drewjbartlett.com/assets/demos/vue-switches/switches.png" />
-</div>
+</p>
 
 ## Installation
 
