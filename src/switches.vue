@@ -1,6 +1,6 @@
 <template>
     <label :class="classObject">
-        <span class="vue-switcher__label" v-if="shouldShowLabel">
+        <span class="vue-switcher__label" v-if="shouldShowLabel && ! inlineLabel">
             <span v-if="label" v-text="label"></span>
             <span v-if="!label && value" v-text="textEnabled"></span>
             <span v-if="!label && !value" v-text="textDisabled"></span>
@@ -8,87 +8,112 @@
 
         <input type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
 
-        <div></div>
+        <div><span class="vue-switcher__inlineLabel" v-if="shouldShowLabel && inlineLabel">
+            <span v-if="label" v-text="label" class="vue_switcher__container"><span v-text="label"></span></span>
+            <span v-if="!label && value" v-visible="value" class="vue_switcher__container"><span  v-text="textEnabled"></span></span>
+            <span v-if="!label && !value" v-visible="!value" class="vue_switcher__container"><span v-text="textDisabled"></span></span>
+            <span class="vue_switcher__width-placeholder" v-text="longestText"></span>
+        </span></div>
     </label>
 </template>
 
 <script>
 
-export default {
+  export default {
     name: 'switches',
 
     props: {
-        typeBold: {
-            default: false
-        },
+      typeBold: {
+        default: false
+      },
 
-        value: {
-            default: false
-        },
+      value: {
+        default: false
+      },
 
-        disabled: {
-            default: false
-        },
+      disabled: {
+        default: false
+      },
 
-        label: {
-            default: ''
-        },
+      label: {
+        default: ''
+      },
 
-        textEnabled: {
-            default: ''
-        },
+      inlineLabel: {
+        default: false
+      },
 
-        textDisabled: {
-            default: ''
-        },
+      textEnabled: {
+        default: ''
+      },
 
-        color: {
-            default: 'default'
-        },
+      textDisabled: {
+        default: ''
+      },
 
-        theme: {
-            default: 'default'
-        },
+      color: {
+        default: 'default'
+      },
 
-        emitOnMount: {
-            default: true
-        }
+      theme: {
+        default: 'default'
+      },
+
+      emitOnMount: {
+        default: true
+      }
     },
 
     mounted () {
-        if(this.emitOnMount) {
-            this.$emit('input', this.value)
-        }
+      if(this.emitOnMount) {
+        this.$emit('input', this.value)
+      }
     },
 
     methods: {
-        trigger (e) {
-            this.$emit('input', e.target.checked)
-        }
+      trigger (e) {
+        this.$emit('input', e.target.checked)
+      }
     },
 
     computed: {
-        classObject () {
+      longestText () {
+        return this.label || this.textEnabled.length > this.textDisabled.length ? this.textEnabled : this.textDisabled
+      },
+      classObject () {
 
-            const { color, value, theme, typeBold, disabled } = this;
+        const { color, value, theme, typeBold, disabled } = this;
 
-            return {
-                'vue-switcher' : true,
-                ['vue-switcher--unchecked'] : !value,
-                ['vue-switcher--disabled'] : disabled,
-                ['vue-switcher--bold']: typeBold,
-                ['vue-switcher--bold--unchecked']: typeBold && !value,
-                [`vue-switcher-theme--${theme}`] : color,
-                [`vue-switcher-color--${color}`] : color,
-            };
+        return {
+          'vue-switcher' : true,
+          ['vue-switcher--unchecked'] : !value,
+          ['vue-switcher--disabled'] : disabled,
+          ['vue-switcher--bold']: typeBold,
+          ['vue-switcher--bold--unchecked']: typeBold && !value,
+          [`vue-switcher-theme--${theme}`] : color,
+          [`vue-switcher-color--${color}`] : color,
+        };
 
-        },
+      },
 
-        shouldShowLabel () {
-            return this.label !== '' || this.textEnabled !== '' || this.textDisabled !== '';
+      shouldShowLabel () {
+        return this.label !== '' || this.textEnabled !== '' || this.textDisabled !== '';
+      }
+    },
+    directives: {
+      visible: {
+        update: (el, binding) => {
+          var value = binding.value;
+
+          if (!!value) {
+            el.style.visibility = 'visible';
+          } else {
+            el.style.visibility = 'hidden';
+          }
         }
+      }
     }
-}
+  }
 
 </script>
 
