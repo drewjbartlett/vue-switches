@@ -1,6 +1,6 @@
 /**
-                       * Default
-                       */
+* Default
+*/
 /**
  * Bulma
  */
@@ -20,7 +20,6 @@
     display: flex;
     align-items: center;
     font-size: 11px;
-    margin-bottom: 5px;
     margin: 0; }
     .vue-switcher__inlineLabel .vue_switcher__container {
       padding: 0;
