@@ -1,6 +1,6 @@
 /**
- * Default
- */
+* Default
+*/
 /**
  * Bulma
  */
@@ -14,6 +14,30 @@
     display: block;
     font-size: 10px;
     margin-bottom: 5px; }
+  .vue-switcher__inlineLabel {
+    padding: 0 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin: 0; }
+    .vue-switcher__inlineLabel .vue_switcher__container {
+      padding: 0;
+      position: absolute;
+      left: 0;
+      top: 0px;
+      width: 100%;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center; }
+      .vue-switcher__inlineLabel .vue_switcher__container span {
+        user-select: none; }
+    .vue-switcher__inlineLabel .vue_switcher__width-placeholder {
+      position: static;
+      visibility: hidden; }
+  .vue-switcher.vue-switcher--unchecked .vue-switcher__inlineLabel {
+    padding: 0 30px; }
   .vue-switcher input {
     opacity: 0;
     width: 100%;
@@ -22,8 +46,8 @@
     z-index: 1;
     cursor: pointer; }
   .vue-switcher div {
-    height: 15px;
-    width: 36px;
+    height: 10px;
+    width: 40px;
     position: relative;
     border-radius: 30px;
     display: -webkit-flex;
@@ -32,20 +56,19 @@
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
-    transition: linear .2s, background-color linear .2s; }
+    transition: all ease .4s; }
     .vue-switcher div:after {
       content: '';
-      height: 20px;
-      width: 20px;
+      height: 18px;
+      width: 18px;
       border-radius: 100px;
       display: block;
-      transition: linear .15s, background-color linear .15s;
+      transition: all ease .3s;
       position: absolute;
       left: 100%;
-      margin-left: -18px;
+      margin-left: -17px;
       cursor: pointer;
-      top: -3px;
-      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1); }
+      top: -4px; }
   .vue-switcher--unchecked div {
     justify-content: flex-end; }
     .vue-switcher--unchecked div:after {
@@ -59,10 +82,10 @@
     height: 26px;
     width: 51px; }
     .vue-switcher--bold div:after {
-      margin-left: -24px;
-      top: 3px; }
+      margin-left: -22px;
+      top: 4px; }
   .vue-switcher--bold--unchecked div:after {
-    left: 28px; }
+    left: 26px; }
   .vue-switcher--bold .vue-switcher__label span {
     padding-bottom: 7px;
     display: inline-block; }

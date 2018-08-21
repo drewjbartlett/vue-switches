@@ -1,6 +1,6 @@
 /**
- * Default
- */
+* Default
+*/
 $color-default-default: #aaa;
 $color-default-green: #53b96e;
 $color-default-blue: #539bb9;
@@ -9,12 +9,12 @@ $color-default-orange: #b97953;
 $color-default-yellow: #bab353;
 
 $theme-default-colors: (
-    default : $color-default-default,
-    blue    : $color-default-blue,
-    red     : $color-default-red,
-    yellow  : $color-default-yellow,
-    orange  : $color-default-orange,
-    green   : $color-default-green
+  default : $color-default-default,
+  blue    : $color-default-blue,
+  red     : $color-default-red,
+  yellow  : $color-default-yellow,
+  orange  : $color-default-orange,
+  green   : $color-default-green
 );
 
 /**
@@ -28,12 +28,12 @@ $color-bulma-yellow: #ffdd57;
 $color-bulma-green: #22c65b;
 
 $theme-bulma-colors: (
-    default : $color-bulma-default,
-    primary : $color-bulma-primary,
-    blue    : $color-bulma-blue,
-    red     : $color-bulma-red,
-    yellow  : $color-bulma-yellow,
-    green   : $color-bulma-green
+  default : $color-bulma-default,
+  primary : $color-bulma-primary,
+  blue    : $color-bulma-blue,
+  red     : $color-bulma-red,
+  yellow  : $color-bulma-yellow,
+  green   : $color-bulma-green
 );
 
 /**
@@ -47,13 +47,14 @@ $color-bootstrap-warning: #f0ad4e;
 $color-bootstrap-danger: #c9302c;
 
 $theme-bootstrap-colors: (
-    default : $color-bootstrap-default,
-    primary : $color-bootstrap-primary,
-    success : $color-bootstrap-success,
-    info    : $color-bootstrap-info,
-    warning : $color-bootstrap-warning,
-    danger  : $color-bootstrap-danger
+  default : $color-bootstrap-default,
+  primary : $color-bootstrap-primary,
+  success : $color-bootstrap-success,
+  info    : $color-bootstrap-info,
+  warning : $color-bootstrap-warning,
+  danger  : $color-bootstrap-danger
 );
+
 
 .vue-switcher {
     position: relative;
@@ -63,6 +64,52 @@ $theme-bootstrap-colors: (
         display: block;
         font-size: 10px;
         margin-bottom: 5px;
+    }
+
+    $inlineLabelMargin: 30px;
+
+
+    &__inlineLabel {
+        padding: 0 $inlineLabelMargin ;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 11px;
+        margin: 0;
+
+        .vue_switcher__container {
+            padding: 0;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width:  100% ;
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+
+
+            span {
+                user-select: none;
+            }
+        }
+
+        .vue_switcher__width-placeholder {
+            position: static;
+            visibility: hidden;
+        }
+
+        // display: none;
+    }
+
+
+    &.vue-switcher--unchecked {
+        .vue-switcher__inlineLabel {
+            padding: 0 $inlineLabelMargin;
+
+            .vue_switcher__container {
+            }
+        }
     }
 
     input {
@@ -75,8 +122,8 @@ $theme-bootstrap-colors: (
     }
 
     div {
-        height: 15px;
-        width: 36px;
+        height: 10px;
+        width: 40px;
         position: relative;
         border-radius: 30px;
         display: -webkit-flex;
@@ -85,21 +132,20 @@ $theme-bootstrap-colors: (
         align-items: center;
         justify-content: flex-start;
         cursor: pointer;
-        transition: linear .2s, background-color linear .2s;
+        transition: all ease .4s;
 
         &:after {
             content: '';
-            height: 20px;
-            width: 20px;
+            height: 18px;
+            width: 18px;
             border-radius: 100px;
             display: block;
-            transition: linear .15s, background-color linear .15s;
+            transition: all ease .3s;
             position: absolute;
             left: 100%;
-            margin-left: -18px;
+            margin-left: -17px;
             cursor: pointer;
-            top: -3px;
-            box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+            top: -4px;
         }
     }
 
@@ -130,15 +176,15 @@ $theme-bootstrap-colors: (
             width: 51px;
 
             &:after {
-                margin-left: -24px;
-                top: 3px;
+                margin-left: -22px;
+                top: 4px;
             }
         }
 
         &--unchecked {
             div {
                 &:after {
-                    left: 28px;
+                    left: 26px;
                 }
             }
         }

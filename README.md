@@ -54,6 +54,10 @@ new Vue({
             <td>A static label to always display whether on or off.</td>
         </tr>
         <tr>
+            <td>inlineLabel</td>
+            <td>Whether to show the labels (label or text-enabled/disabled) within the switch as opposed to above it.</td>
+        </tr>
+        <tr>
             <td>text-enabled</td>
             <td>The text that displays when enabled.</td>
         </tr>
