@@ -1,5 +1,7 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const VueTemplateCompiler = require('vue-template-compiler');
 
 module.exports = {
   entry: './src/main.js',
@@ -11,25 +13,33 @@ module.exports = {
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
-
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+      },
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       }
     ]
   },
-  devtool: '#eval-source-map'
-}
+  plugins: [
+    new VueLoaderPlugin({
+      compiler: VueTemplateCompiler
+    })
+  ],
+  devtool: '#cheap-module-eval-source-map'
+};
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = false
+  module.exports.devtool = false;
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -42,6 +52,6 @@ if (process.env.NODE_ENV === 'production') {
       },
       sourceMap: false
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin()
   ])
 }

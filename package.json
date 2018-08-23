@@ -4,8 +4,7 @@
   "description": "An on/off switch component for Vue.js with theme support.",
   "main": "src/switches.vue",
   "scripts": {
-    "compile": "node-sass src/switches.scss dist/switches.css",
-    "prepublish": "npm run compile"
+    "build": "cross-env NODE_ENV=production webpack --progress"
   },
   "browserify": {
     "transform": [
@@ -34,7 +33,17 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^4.0.0",
-    "node-sass": "^4.5.3",
+    "css-loader": "^1.0.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "vue-loader": "^15.4.0",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^2.5.1"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
