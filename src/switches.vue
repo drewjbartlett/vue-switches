@@ -46,6 +46,10 @@ export default {
             default: 'default'
         },
 
+        colorDisabled: {
+            default: ''
+        },
+
         theme: {
             default: 'default'
         },
@@ -70,7 +74,7 @@ export default {
     computed: {
         classObject () {
 
-            const { color, value, theme, typeBold, disabled } = this;
+            const { color, colorDisabled, value, theme, typeBold, disabled } = this;
 
             return {
                 'vue-switcher' : true,
@@ -79,7 +83,7 @@ export default {
                 ['vue-switcher--bold']: typeBold,
                 ['vue-switcher--bold--unchecked']: typeBold && !value,
                 [`vue-switcher-theme--${theme}`] : color,
-                [`vue-switcher-color--${color}`] : color,
+                [`vue-switcher-color--${(colorDisabled && !value ? colorDisabled : color)}`] : (colorDisabled && !value ? colorDisabled : color),
             };
 
         },

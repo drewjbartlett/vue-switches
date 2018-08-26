@@ -70,6 +70,10 @@ new Vue({
             <td>Which color to use. </td>
         </tr>
         <tr>
+            <td>color-disabled</td>
+            <td>Which color to use when disabled. </td>
+        </tr>
+        <tr>
             <td>type-bold</td>
             <td>Bigger style.</td>
         </tr>
@@ -175,7 +179,7 @@ classObject () {
                 ['vue-switcher--bold']: typeBold,
                 ['vue-switcher--bold--unchecked']: typeBold && !enabled,
                 [`vue-switcher-theme--${theme}`]: color,
-                [`vue-switcher-color--${color}`]: color,
+                [`vue-switcher-color--${(colorDisabled && !value ? colorDisabled : color)}`]: (colorDisabled && !value ? colorDisabled : color),
             };
 
         }
