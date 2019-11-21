@@ -6,7 +6,7 @@
             <span v-if="!label && !value" v-text="textDisabled"></span>
         </span>
 
-        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
+        <input type="checkbox" :disabled="disabled" @change="trigger" @click.prevent @mousedown="toggle" @touchstart="toggle" @touchend.prevent :checked="value">
 
         <div></div>
     </label>
@@ -62,6 +62,10 @@ export default {
     },
 
     methods: {
+        toggle(e) {
+            e.target.checked = !e.target.checked;
+            this.trigger(e)
+        },
         trigger (e) {
             this.$emit('input', e.target.checked)
         }
