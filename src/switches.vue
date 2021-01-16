@@ -6,7 +6,7 @@
             <span v-if="!label && !value" v-text="textDisabled"></span>
         </span>
 
-        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="modelValue"  >
+        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="modelValue" v-bind="$attrs" >
 
         <div></div>
     </label>
@@ -16,6 +16,7 @@
 
 export default {
     name: 'switches',
+    inheritAttrs: false,
     props: {
         typeBold: {
             default: false
