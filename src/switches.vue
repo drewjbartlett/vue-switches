@@ -77,7 +77,7 @@ export default {
                 ['vue-switcher--unchecked'] : !modelValue,
                 ['vue-switcher--disabled'] : disabled,
                 ['vue-switcher--bold']: typeBold,
-                ['vue-switcher--bold--unchecked']: typeBold && !value,
+                ['vue-switcher--bold--unchecked']: typeBold && !modelValue,
                 [`vue-switcher-theme--${theme}`] : color,
                 [`vue-switcher-color--${color}`] : color,
             };
