@@ -6,7 +6,7 @@
             <span v-if="!label && !value" v-text="textDisabled"></span>
         </span>
 
-        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="value">
+        <input type="checkbox" :disabled="disabled" @change="trigger" :checked="modelValue" v-bind="$attrs" >
 
         <div></div>
     </label>
@@ -16,13 +16,13 @@
 
 export default {
     name: 'switches',
-
+    inheritAttrs: false,
     props: {
         typeBold: {
             default: false
         },
 
-        value: {
+        modelValue:{
             default: false
         },
 
@@ -57,27 +57,27 @@ export default {
 
     mounted () {
         if(this.emitOnMount) {
-            this.$emit('input', this.value)
+            this.$emit('update:modelValue', this.modelValue)
         }
     },
 
     methods: {
         trigger (e) {
-            this.$emit('input', e.target.checked)
+            this.$emit('update:modelValue', e.target.checked)
         }
     },
 
     computed: {
         classObject () {
 
-            const { color, value, theme, typeBold, disabled } = this;
+            const { color, modelValue, theme, typeBold, disabled } = this;
 
             return {
                 'vue-switcher' : true,
-                ['vue-switcher--unchecked'] : !value,
+                ['vue-switcher--unchecked'] : !modelValue,
                 ['vue-switcher--disabled'] : disabled,
                 ['vue-switcher--bold']: typeBold,
-                ['vue-switcher--bold--unchecked']: typeBold && !value,
+                ['vue-switcher--bold--unchecked']: typeBold && !modelValue,
                 [`vue-switcher-theme--${theme}`] : color,
                 [`vue-switcher-color--${color}`] : color,
             };
