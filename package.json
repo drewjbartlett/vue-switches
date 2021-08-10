@@ -7,6 +7,10 @@
     "compile": "node-sass src/switches.scss dist/switches.css",
     "prepublish": "npm run compile"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drewjbartlett/vue-switches.git"
+  },
   "browserify": {
     "transform": [
       "vueify"
